@@ -1,11 +1,13 @@
 :root {
     --calcWidth: 175px;
+    --fontColor: 0, 0, 0;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 .roboto-slab {
@@ -21,6 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--fontColor);
 }
 
 .calculator {
@@ -39,8 +42,15 @@
 
 .screen {
     width: calc(var(--calcWidth) * 0.75);
+    min-height: 21px;
     text-align: center;
     outline: 2px solid black;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: rgb(0, 0, 0, 0.5); */
+    color: rgb(var(--fontColor), 0.6);
 }
 
 .buttonContainer {
@@ -88,7 +98,7 @@
     align-items: center;
 }
 
-.button:hover {
+.button:hover, .screen:hover {
     background-color: pink;
     outline: 2px solid black;
     outline-offset: -1px;
